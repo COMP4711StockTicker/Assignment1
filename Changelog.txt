@@ -7,3 +7,7 @@ Feb. 3, 2016
 -----------------
 * initial push
 *****************
+Feb. 3, 2016
+Master Page
+Navbar
+Home Page
