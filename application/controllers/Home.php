@@ -1,20 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends Application {
 
     public function index()
     {
-
-        $data = array('page'    => 'Home'
-                     ,'content' =>'home/content');
-        $this->load->view('master',$data);
-    }
-    public function stocks()
-    {
-    }
-    public function players()
-    {
-
+        $this->data['title'] = 'Stock Ticker';
+        $this->data['pagebody'] = 'home_body';
+        $this->render();
+//        $data = array('page'    => 'Home'
+//                     ,'content' =>'home/content');
+//        $this->load->view('master',$data);
     }
 }
