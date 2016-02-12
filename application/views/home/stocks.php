@@ -12,42 +12,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {stock_list}
                         <tr>
-                            <td><a href="/stock/BOND">BOND</a></td>
-                            <td>Bonds</td>
-                            <td>B</td>
-                            <td>66</td>
+                            <td><a href="/stock/{Code}">{Code}</a></td>
+                            <td>{Name}</td>
+                            <td>{Category}</td>
+                            <td>{Value}</td>
                         </tr>
-                        <tr>
-                            <td>GOLD</td>
-                            <td>God</td>
-                            <td>B</td>
-                            <td>110</td>
-                        </tr>
-                        <tr>
-                            <td>GRAN</td>
-                            <td>Grain</td>
-                            <td>B</td>
-                            <td>113</td>
-                        </tr>
-                        <tr>
-                            <td>IND</td>
-                            <td>Industrial</td>
-                            <td>B</td>
-                            <td>39</td>
-                        </tr>
-                        <tr>
-                            <td>OIL</td>
-                            <td>Oil</td>
-                            <td>B</td>
-                            <td>52</td>
-                        </tr>
-                        <tr>
-                            <td>TECH</td>
-                            <td>Tech</td>
-                            <td>B</td>
-                            <td>37</td>
-                        </tr>
+                        {/stock_list}
                     </tbody>
                 </table>
             </div>

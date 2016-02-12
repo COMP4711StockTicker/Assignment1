@@ -11,11 +11,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><a href="/portfolio/1">Big Dick</a></td>
-                        <td>1000</td>
-                        <td>100</td>
-                    </tr>
+                        {player_list}
+                        <tr>
+                            <td><a href="/portfolio/{Player}">{Player}</a></td>
+                            <td>{Equity}</td>
+                            <td>{Cash}</td>
+                        </tr>
+                        {/player_list}
                     </tbody>
                 </table>
             </div>

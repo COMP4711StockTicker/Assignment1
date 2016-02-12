@@ -8,6 +8,6 @@
 </ul>
 
 <div class="tab-content">
-    <?php $this->load->view('home/stocks'); ?>
-    <?php $this->load->view('home/players'); ?>
+    {stocks}
+    {players}
 </div>
