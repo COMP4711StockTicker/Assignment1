@@ -22,19 +22,32 @@
                         <td>{Value}</td>
                     </tr>
                     {/stock_list}-->
+                    {transactions_list}
                     <tr>
-                        <td>Dummy Name</td>
-                        <td>Dummy Stock</td>
-                        <td>Dummy Transaction</td>
-                        <td>Dummy Quantity</td>
-                        <td>Dummy Date</td>
+                        <td>{Player}</td>
+                        <td>{Stock}</td>
+                        <td>{Trans}</td>
+                        <td>{Quantity}</td>
+                        <td>{DateTime}</td>
                     </tr>
+                    {/transactions_list}
                     </tbody>
                 </table>
             </div>
         </div>
         <div class = "col-md-5">
             <h2>Current Holdings</h2>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Players
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    {players_list}
+                    <li><a href="portfolio/getPlayer/{Player}">{Player}</a></li>
+                    {/players_list}
+                </ul>
+            </div>
             <div class = "table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -52,10 +65,12 @@
                         <td>{Value}</td>
                     </tr>
                     {/stock_list}-->
+                    {transactions_list}
                     <tr>
-                        <td>Dummy Stock</td>
-                        <td>Dummy Quantity</td>
+                        <td>{Stock}</td>
+                        <td>{Quantity}</td>
                     </tr>
+                    {/transactions_list}
                     </tbody>
                 </table>
             </div>
