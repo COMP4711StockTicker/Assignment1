@@ -4,7 +4,10 @@
 */cache/*
 !*/cache/index.html
 !*/cache/.htaccess
+
 */.idea/
+
+
 
 
 # Created by https://www.gitignore.io/api/phpstorm
@@ -57,4 +60,8 @@ atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
+
 fabric.properties
+
+fabric.properties
+
