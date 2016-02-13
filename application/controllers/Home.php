@@ -8,20 +8,11 @@ class Home extends Application {
         $stock_list = array();
         $player_list = array();
 
-        $this->load->database();
+        $this->load->model('Stocks');
+        $this->load->model('Players');
 
-        $query = $this->db->query('SELECT * FROM stocks');
-        foreach ($query->result() as $row)
-        {
-            array_push($stock_list, $row);
-        }
-
-        $query = $this->db->query('SELECT * FROM players');
-        foreach ($query->result() as $row)
-        {
-            array_push($player_list, $row);
-        }
-
+        $stock_list = $this->Stocks->get_all();
+        $player_list = $this->Players->get_all();
 
         $this->data['title'] = 'Stock Ticker';
         $this->data['pagebody'] = 'home_body';
@@ -30,8 +21,5 @@ class Home extends Application {
         $this->data['stocks'] = $this->parser->parse('home/stocks', $this->data, true);
         $this->data['players'] = $this->parser->parse('home/players', $this->data, true);
         $this->render();
-//        $data = array('page'    => 'Home'
-//                     ,'content' =>'home/content');
-//        $this->load->view('master',$data);
     }
 }
