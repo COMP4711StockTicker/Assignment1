@@ -5,9 +5,6 @@ class Home extends Application {
 
     public function index()
     {
-        $stock_list = array();
-        $player_list = array();
-
         $this->load->model('Stocks');
         $this->load->model('Players');
 
