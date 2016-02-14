@@ -21,7 +21,7 @@ class Stock extends Application {
         $transaction = $this->Stocks->get_transaction();
 
         $this->data['title'] = 'Trade Market';
-        $this->data['pagebody'] = 'stock_body';
+        $this->data['pagebody'] = 'stock/trades';
         $this->data['stock_list'] = $stock_list;
         $this->data['transactions_list'] = $transaction_list;
         $this->data['movements_list'] = $movement_list;
@@ -42,8 +42,9 @@ class Stock extends Application {
         $transaction = $this->Stocks->get_stock_activity($stock);
 
         $this->data['title'] = 'Trade Market';
-        $this->data['pagebody'] = 'stock_body';
+        $this->data['pagebody'] = 'stock/ind_trades';
         $this->data['transactions'] = $transaction;
+        $this->data['stockname'] = $stock;
         $this->data['stock_list'] = $stock_list;
         $this->data['transactions_list'] = $transaction_list;
         $this->data['movements_list'] = $movement_list;

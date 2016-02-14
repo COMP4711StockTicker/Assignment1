@@ -35,4 +35,5 @@ class Stocks extends MY_Model {
         $query = $this->db->query($query, array($name));
         return $query->result();
     }
+
 }
