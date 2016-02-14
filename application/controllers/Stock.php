@@ -47,7 +47,7 @@ class Stock extends Application {
         $this->data['stock_list'] = $stock_list;
         $this->data['transactions_list'] = $transaction_list;
         $this->data['movements_list'] = $movement_list;
-        $this->data['trades'] = $this->parser->parse('stock/trades', $this->data, true);
+        $this->data['trades'] = $this->parser->parse('stock/ind_trades', $this->data, true);
 
         $this->render();
     }

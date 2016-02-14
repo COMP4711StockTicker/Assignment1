@@ -6,7 +6,7 @@
         <span class="caret"></span></button>
     <ul class="dropdown-menu">
         {stock_list}
-        <li><a href="GetStock/{Code}">{Code}</a></li>
+        <li><a href="stock/GetStock/{Code}">{Code}</a></li>
         {/stock_list}
     </ul>
 </div>
