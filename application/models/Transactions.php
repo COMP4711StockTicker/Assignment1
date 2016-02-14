@@ -25,8 +25,17 @@ class Transactions extends MY_Model {
 
     public function get_player_stock($name)
     {
+        $sql = 'SELECT * FROM holdings WHERE player = ?;';
+        $query = $this->db->query($sql, array($name));
+
+        return $query->result();
+    }
+
+    public function get_player_history($name)
+    {
         $sql = 'SELECT * FROM transactions WHERE player = ?;';
         $query = $this->db->query($sql, array($name));
+
         return $query->result();
     }
 }

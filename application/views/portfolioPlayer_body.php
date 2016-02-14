@@ -1,12 +1,22 @@
 <div id="history" class="tab-pane fade in active">
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            {name}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            {players_list}
+            <li><a href="{Player}">{Player}</a></li>
+            {/players_list}
+        </ul>
+    </div>
     <div class = "row">
-        <div class = "col-md-5 col-md-offset-1">
+        <div class = "col-md-5">
             <h2>Recent Activity</h2>
             <div class = "table-responsive">
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th>Player</th>
                         <th>Stock</th>
                         <th>Transaction</th>
                         <th>Quantity</th>
@@ -24,7 +34,6 @@
                     {/stock_list}-->
                     {transactions_list}
                     <tr>
-                        <td>{Player}</td>
                         <td>{Stock}</td>
                         <td>{Trans}</td>
                         <td>{Quantity}</td>
@@ -35,20 +44,8 @@
                 </table>
             </div>
         </div>
-        <div class = "col-md-5">
+        <div class = "col-md-5 col-md-offset-1">
             <h2>Current Holdings</h2>
-            <p>For {name}</p>
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Players
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    {players_list}
-                    <li><a href="{Player}">{Player}</a></li>
-                    {/players_list}
-                </ul>
-            </div>
             <div class = "table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -69,8 +66,7 @@
                     {player_stock_list}
                     <tr>
                         <td>{Stock}</td>
-                        <td>{Quantity}</td>
-                        <td>{Trans}</td>
+                        <td>{Total}</td>
                     </tr>
                     {/player_stock_list}
                     </tbody>
