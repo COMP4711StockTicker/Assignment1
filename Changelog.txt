@@ -7,3 +7,13 @@ Feb. 3, 2016
 -----------------
 * initial push
 *****************
+Feb. 3, 2016
+Master Page
+Navbar
+Home Page
+
+Feb. 12, 2016
+Home Controller
+Player Model
+Stock Model
+Route
