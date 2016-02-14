@@ -13,7 +13,7 @@
                     <tbody>
                         {player_list}
                         <tr>
-                            <td><a href="/portfolio/{Player}">{Player}</a></td>
+                            <td><a href="/portfolio/getPlayer/{Player}">{Player}</a></td>
                             <td>{Equity}</td>
                             <td>{Cash}</td>
                         </tr>
