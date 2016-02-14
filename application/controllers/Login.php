@@ -11,9 +11,7 @@ class Login extends Application {
     }
 
     public function action(){
-       // $this->input->post();
-       // var_dump($this->input->post);
-        var_dump($this->input->get('username'));
-        echo $this->input->get('password');
+
+        $this->index();
     }
 }
