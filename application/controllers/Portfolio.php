@@ -33,7 +33,7 @@ class Portfolio extends Application {
         $this->load->model('Transactions');
         $this->load->model('Players');
 
-        $transactions_list = $this->Transactions->get_all();
+        $transactions_list = $this->Transactions->get_player_history($player);
         $players_list = $this->Players->get_all();
         $player_stock_list = $this->Transactions->get_player_stock($player);
 
