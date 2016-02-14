@@ -15,14 +15,14 @@
                     </thead>
                     <tbody>
 
-                    {transactions}
+                    {transactions_list}
                     <tr>
                         <td>{Stock}</td>
                         <td>{Trans}</td>
                         <td>{Quantity}</td>
                         <td>{DateTime}</td>
                     </tr>
-                    {/transactions}
+                    {/transactions_list}
                     </tbody>
                 </table>
             </div>
