@@ -14,7 +14,7 @@
                     <tbody>
                         {stock_list}
                         <tr>
-                            <td><a href="/stock/{Code}">{Code}</a></td>
+                            <td><a href="stock/GetStock/{Code}">{Code}</a></td>
                             <td>{Name}</td>
                             <td>{Category}</td>
                             <td>{Value}</td>
