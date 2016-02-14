@@ -6,7 +6,6 @@
                     <thead>
                     <tr>
                         <th>Player</th>
-                        <th>Equity</th>
                         <th>Cash</th>
                     </tr>
                     </thead>
@@ -14,7 +13,6 @@
                         {player_list}
                         <tr>
                             <td><a href="/portfolio/getPlayer/{Player}">{Player}</a></td>
-                            <td>{Equity}</td>
                             <td>{Cash}</td>
                         </tr>
                         {/player_list}
