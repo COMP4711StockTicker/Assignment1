@@ -22,4 +22,17 @@ class Stocks extends MY_Model {
         $query = $this->db->get('stocks');
         return $query->result();
     }
+
+    public function get_transaction() {
+
+        $query = $this->db->get('transactions', 'Stock');
+        return $query->result();
+    }
+
+    public function get_stock_activity($name) {
+
+        $query = 'SELECT * FROM transactions WHERE stock = ?;';
+        $query = $this->db->query($query, array($name));
+        return $query->result();
+    }
 }

@@ -11,21 +11,44 @@ class Stock extends Application {
 
     public function index()
     {
-        $stock_list = array();
+        $this->load->model('Stocks');
+        $this->load->model('Transactions');
+        $this->load->model('Movements');
 
-        $this->load->database();
-
-        $query = $this->db->query('SELECT * FROM stocks');
-        foreach ($query->result() as $row)
-        {
-            array_push($stock_list, $row);
-        }
-
+        $stock_list = $this->Stocks->get_all();
+        $transaction_list = $this->Transactions->get_all();
+        $movement_list = $this->Movements->get_all();
+        $transaction = $this->Stocks->get_transaction();
 
         $this->data['title'] = 'Trade Market';
         $this->data['pagebody'] = 'stock_body';
         $this->data['stock_list'] = $stock_list;
+        $this->data['transactions_list'] = $transaction_list;
+        $this->data['movements_list'] = $movement_list;
+        $this->data['transactions'] = $transaction;
         $this->data['trades'] = $this->parser->parse('stock/trades', $this->data, true);
+        $this->render();
+    }
+
+    public function GetStock($stock) {
+
+        $this->load->model('Stocks');
+        $this->load->model('Transactions');
+        $this->load->model('Movements');
+
+        $stock_list = $this->Stocks->get_all();
+        $transaction_list = $this->Transactions->get_all();
+        $movement_list = $this->Movements->get_all();
+        $transaction = $this->Stocks->get_stock_activity($stock);
+
+        $this->data['title'] = 'Trade Market';
+        $this->data['pagebody'] = 'stock_body';
+        $this->data['transactions'] = $transaction;
+        $this->data['stock_list'] = $stock_list;
+        $this->data['transactions_list'] = $transaction_list;
+        $this->data['movements_list'] = $movement_list;
+        $this->data['trades'] = $this->parser->parse('stock/trades', $this->data, true);
+
         $this->render();
     }
 }
