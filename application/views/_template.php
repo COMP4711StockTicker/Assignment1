@@ -37,6 +37,7 @@ if (!defined('APPPATH'))
                     <li><a href="/stock">Stock</a></li>
                     <li><a href="/portfolio">Portfolio</a></li>
                     <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
                 </ul>
             </div>
         </div>

@@ -11,7 +11,21 @@ class Login extends Application {
     }
 
     public function action(){
+        // load
+        $this->load->model('Users');
 
-        $this->index();
+        // variables
+        $user               = new Users();
+        $username           = $_POST['username'];
+        $password           = hash('md5', $_POST['password']);
+        $current_user       = $user->login($username, $password);
+
+        if ($user != null){
+            $_SESSION['current_user'] = $current_user;
+            redirect('/');
+        }
+        else {
+            redirect('login');
+        }
     }
 }

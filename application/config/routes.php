@@ -59,8 +59,7 @@ $route['portfolio/(:any)'] = 'portfolio/portfolio/$1';
 $route['stock/GetStock/(:any)'] = 'stock/GetStock/$1';
 $route['stock/(:any)'] = 'stock/stock/$1';
 $route['login'] = 'login';
-
-
+$route['register'] = 'register';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
