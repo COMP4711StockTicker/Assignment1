@@ -20,4 +20,9 @@ class Players extends MY_Model {
         $query = $this->db->get('players');
         return $query->result();
     }
+
+    public function get_all_players(){
+        $query = $this->db->query("SELECT player FROM players");
+        return $query->result();
+    }
 }
