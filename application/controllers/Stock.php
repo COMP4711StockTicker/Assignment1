@@ -16,7 +16,7 @@ class Stock extends Application {
         $this->load->model('Movements');
 
         $stock_list = $this->Stocks->get_all();
-        $transaction_list = $this->Transactions->get_all();
+        $transaction_list = $this->Transactions->get_all_stock();
         $movement_list = $this->Movements->get_all();
         $transaction = $this->Stocks->get_transaction();
 
