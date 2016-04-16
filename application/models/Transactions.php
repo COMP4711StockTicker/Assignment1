@@ -23,6 +23,20 @@ class Transactions extends MY_Model {
         return $query->result();
     }
 
+    public function get_all_stock(){
+        $allStocks = array();
+        //www.comp4711bsx.local/data/stocks
+        //http://bsx.jlparry.com/data/stocks
+        if(($fileHandler = fopen("www.comp4711bsx.local/data/stocks", 'r')) !== FALSE) {
+            while (($data = fgetcsv($fileHandler, 0, ',', '"')) !== FALSE) {
+                $allStocks[] = array("code" => $data[0], "name" => $data[1], "category" => $data[2], "value" => $data[3]);
+            }
+            fclose($fileHandler);
+        }
+        array_shift($allStocks);
+        return $allStocks;
+    }
+
     public function get_player_stock($name)
     {
         $sql = 'SELECT * FROM holdings WHERE player = ?;';
