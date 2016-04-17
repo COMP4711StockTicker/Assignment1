@@ -5,9 +5,16 @@ class Login extends Application {
 
     public function index()
     {
-        $this->data['title'] = 'Login';
-        $this->data['pagebody'] = 'login_body';
-        $this->render();
+        if ($this->session->userdata('logged_in') == null){
+            $this->data['title'] = 'Login';
+            $this->data['pagebody'] = 'login_body';
+            $this->data['menu'] = $this->parser->parse('menu/loggedout', $this->data, true);
+            $this->render();
+        }
+        else{
+            redirect('/');
+        }
+
     }
 
     public function action(){
@@ -21,8 +28,6 @@ class Login extends Application {
         $current_user       = $user->login($username, $password);
 
         if ($user != null){
-            $_SESSION['current_user'] = $current_user;
-            var_dump($current_user);
             $sess_array = array(
                 'id' => $current_user[0]->id,
                 'username' => $current_user[0]->username

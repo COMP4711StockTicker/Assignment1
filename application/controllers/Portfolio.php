@@ -12,20 +12,27 @@ class Portfolio extends Application {
 
     public function index()
     {
-        $transactions_list = array();
+        if ($this->session->userdata('logged_in') == null){
+            redirect('login');
+        }
+        else{
+            $transactions_list = array();
 
-        $this->load->model('Transactions');
-        $this->load->model('Players');
+            $this->load->model('Transactions');
+            $this->load->model('Players');
 
-        $transactions_list = $this->Transactions->get_all();
-        $players_list = $this->Players->get_all();
+            $transactions_list = $this->Transactions->get_all();
+            $players_list = $this->Players->get_all();
 
-        $this->data['title'] = 'Portfolio';
-        $this->data['pagebody'] = 'portfolio_body';
-        $this->data['transactions_list'] = $transactions_list;
-        $this->data['players_list'] = $players_list;
+            $this->data['title'] = 'Portfolio';
+            $this->data['pagebody'] = 'portfolio_body';
+            $this->data['transactions_list'] = $transactions_list;
+            $this->data['players_list'] = $players_list;
+            $this->data['menu'] = $this->parser->parse('menu/loggedin', $this->data, true);
 
-        $this->render();
+
+            $this->render();
+        }
     }
 
     public function getPlayer($player)
