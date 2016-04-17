@@ -22,10 +22,21 @@ class Login extends Application {
 
         if ($user != null){
             $_SESSION['current_user'] = $current_user;
+            var_dump($current_user);
+            $sess_array = array(
+                'id' => $current_user[0]->id,
+                'username' => $current_user[0]->username
+            );
+            $this->session->set_userdata('logged_in', $sess_array);
             redirect('/');
         }
         else {
             redirect('login');
         }
+    }
+    public function logout(){
+        $this->session->unset_userdata('logged_in');
+        session_destroy();
+        redirect('login');
     }
 }
