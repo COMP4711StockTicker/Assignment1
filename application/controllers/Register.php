@@ -12,9 +12,15 @@ class Register extends Application {
 
     public function index()
     {
-        $this->data['title'] = 'Register';
-        $this->data['pagebody'] = 'register_body';
-        $this->render();
+        if ($this->session->userdata('logged_in') == null){
+            $this->data['title'] = 'Register';
+            $this->data['pagebody'] = 'register_body';
+            $this->data['menu'] = $this->parser->parse('menu/loggedout', $this->data, true);
+            $this->render();
+        }
+        else{
+            redirect('/');
+        }
     }
 
     public function action(){
